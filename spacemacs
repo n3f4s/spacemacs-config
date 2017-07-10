@@ -35,6 +35,7 @@ values."
      shell-scripts
      html
      latex
+     pandoc
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -46,6 +47,7 @@ values."
      emacs-lisp
      git
      (markdown :variables markdown-live-preview-engine 'vmd)
+     ;; langtool
      gtags
      ;; org
      ;; (shell :variables
@@ -61,7 +63,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+     dotspacemacs-additional-packages '(langtool)
+   )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -339,6 +343,9 @@ you should place your code here."
            (address "vincent.bonnevalle@smile.fr"))))
   (setq nnml-directory "~/mail")
   (setq message-directory "~/mail")
+  (setq langtool-language-tool-jar "/home/vibon/langtool/languagetool-commandline.jar")
+  ;; (setq langtool-language-tool-jar "/home/vibon/Téléchargements/languagetool-3.6/languagetool-commandline.jar")
+  (setq langtool-default-language "fr")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
